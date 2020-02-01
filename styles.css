@@ -1,7 +1,7 @@
 body {
-	background: #FFFFFF;
 	margin: 0px;
 	min-width: 1075px;
+
 }
 
 td {
@@ -11,9 +11,26 @@ td {
 	text-align: center;
 }
 
+
+.bgimage
+{
+	background-image: url(F:\work\HACK-JNU\monopoly\images\hackjnu.jpg);
+}
+.card
+{
+	margin-top: 100px;
+	margin-left: 200px;
+}
+.container
+{
+	
+	align-items: center;
+	text-align: center;
+}
+
 #setup {
 	display: none;
-	margin: 15px;
+
 }
 
 #moneybar {
@@ -35,9 +52,10 @@ td {
 	border-spacing: 1px;
 }
 
+
 #moneybarwrap {
 	position: absolute;
-	min-width: 135px;
+	min-width: 4000px;
 	top: 0px;
 	right: 0px;
 	-webkit-user-select: none;
@@ -83,7 +101,7 @@ td {
 #control {
 	position: absolute;
 	z-index: 9;
-	top: 250px;
+	top: 350px;
 	left: 250px;
 	border: 2px solid black;
 	padding: 10px;
@@ -579,17 +597,33 @@ td {
 	background-size: auto 40px;
 }
 
+.board-center
+{
+	background-image: linear-gradient(to right,#3498DB,#1A5276);
+}
+
 .board-center {
 	width: 675px;
 	border: none;
 	vertical-align: bottom;
 	background-repeat: no-repeat;
-	background-size: auto 40px;
+	
 }
 
+.cell board-left
+{
+	color: #fff;
+}
+
+.cell board-right
+{
+	color: #fff;
+}
 .board-corner {
 	width: 102px;
 	height: 102px;
+	background-color: black;
+	color: #fff;
 }
 
 .board-top {
@@ -816,9 +850,6 @@ td {
 
 	height: 68px;
 	right: -25px;
-
-
-
 	top: 0px;
 	width: 15px;
 

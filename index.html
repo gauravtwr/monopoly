@@ -11,9 +11,26 @@
 	<script type="text/javascript" src="ai.js"></script>
 	<script type="text/javascript" src="monopoly.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!---------------------- back ground color change ------------------------->
+<!--
+	<script type="text/javascript">
+		
+		function handleOnChangeEvent(x){
+			document.bgColor=x;
+		}
+	</script>
+		-->
+	<!---------------------- back ground color change ------------------------->
+
+
 </head>
 
+
 <body>
+	<div class="bgimage">
 	<div id="popupbackground"></div>
 	<div id="popupwrap">
 		<div id="popup">
@@ -105,27 +122,29 @@
 		</div>
 	</div>
 
-	<table id="board">
+<!---------------------------  START GAME BOARD ---------------------------------------->
+
+	<table id="board" class="boardtable">
 		<tr>
-			<td class="cell board-corner" id="cell20"></td>
-			<td class="cell board-top" id="cell21"></td>
-			<td class="cell board-top" id="cell22"></td>
-			<td class="cell board-top" id="cell23"></td>
-			<td class="cell board-top" id="cell24"></td>
-			<td class="cell board-top" id="cell25"></td>
-			<td class="cell board-top" id="cell26"></td>
-			<td class="cell board-top" id="cell27"></td>
+			<td bgcolor="#5164AB" class="cell board-corner" id="cell20" style="background-image: "></td>
+			<td bgcolor="red" class="cell board-top" id="cell21"></td>
+			<td bgcolor="grey" class="cell board-top" id="cell22"></td>
+			<td bgcolor="red" class="cell board-top" id="cell23"></td>
+			<td bgcolor="red" class="cell board-top" id="cell24"></td>
+			<td bgcolor="red" class="cell board-top" id="cell25"></td>
+			<td bgcolor="yellow" class="cell board-top" id="cell26"></td>
+			<td bgcolor="yellow" class="cell board-top" id="cell27"></td>
 			<td class="cell board-top" id="cell28"></td>
-			<td class="cell board-top" id="cell29"></td>
+			<td bgcolor="yellow" class="cell board-top" id="cell29"></td>
 			<td class="cell board-corner" id="cell30"></td>
 		</tr><tr>
 			<td class="cell board-left" id="cell19"></td>
-			<td colspan="9" class="board-center"></td>
-			<td class="cell board-right" id="cell31"></td>
+			<td  colspan="9" class="board-center"></td>
+			<td bgcolor="green" class="cell board-right" id="cell31"></td>
 		</tr><tr>
 			<td class="cell board-left" id="cell18"></td>
 			<td colspan="9" class="board-center"></td>
-			<td class="cell board-right" id="cell32"></td>
+			<td bgcolor="green" class="cell board-right" id="cell32"></td>
 		</tr><tr>
 			<td class="cell board-left" id="cell17"></td>
 			<td colspan="9" class="board-center"></td>
@@ -133,47 +152,54 @@
 		</tr><tr>
 			<td class="cell board-left" id="cell16"></td>
 			<td colspan="9" class="board-center"></td>
-			<td class="cell board-right" id="cell34"></td>
+			<td bgcolor="green"class="cell board-right" id="cell34"></td>
 		</tr><tr>
 			<td class="cell board-left" id="cell15"></td>
 			<td colspan="9" class="board-center"></td>
 			<td class="cell board-right" id="cell35"></td>
 		</tr><tr>
-			<td class="cell board-left" id="cell14"></td>
+			<td bgcolor="magenta" class="cell board-left" id="cell14"></td>
 			<td colspan="9" class="board-center"></td>
 			<td class="cell board-right" id="cell36"></td>
 		</tr><tr>
-			<td class="cell board-left" id="cell13"></td>
+			<td bgcolor="magenta" class="cell board-left" id="cell13"></td>
 			<td colspan="9" class="board-center"></td>
-			<td class="cell board-right" id="cell37"></td>
+			<td bgcolor="blue"class="cell board-right" id="cell37"></td>
 		</tr><tr>
 			<td class="cell board-left" id="cell12"></td>
 			<td colspan="9" class="board-center"></td>
 			<td class="cell board-right" id="cell38"></td>
 		</tr><tr>
-			<td class="cell board-left" id="cell11"></td>
+			<td bgcolor="magenta" class="cell board-left" id="cell11"></td>
 			<td colspan="9" class="board-center">
 				<div id="jail"></div>
 			</td>
-			<td class="cell board-right" id="cell39"></td>
+			<td bgcolor="blue" class="cell board-right" id="cell39"></td>
 		</tr><tr>
 			<td class="cell board-corner" id="cell10"></td>
-			<td class="cell board-bottom" id="cell9"></td>
-			<td class="cell board-bottom" id="cell8"></td>
+			<td bgcolor="sky blue" class="cell board-bottom" id="cell9"></td>
+			<td bgcolor="sky blue" class="cell board-bottom" id="cell8"></td>
 			<td class="cell board-bottom" id="cell7"></td>
-			<td class="cell board-bottom" id="cell6"></td>
+			<td bgcolor="sky blue" class="cell board-bottom" id="cell6"></td>
 			<td class="cell board-bottom" id="cell5"></td>
 			<td class="cell board-bottom" id="cell4"></td>
-			<td class="cell board-bottom" id="cell3"></td>
+			<td bgcolor="brown" class="cell board-bottom" id="cell3"></td>
 			<td class="cell board-bottom" id="cell2"></td>
 			<td class="cell board-bottom" id="cell1"></td>
 			<td class="cell board-corner" id="cell0"></td>
 		</tr>
+
 	</table>
 
 	<div id="moneybarwrap">
 		<div id="moneybar">
-			<table>
+			<table class="table table-bordered table-dark">
+				<thead>
+					<tr>
+						<td>Sign</td>
+						<td>Players</td>
+					</tr>
+				</thead>
 				<tr id="moneybarrow0" class="money-bar-row">
 
 					<td class="moneybararrowcell"><img src="images/arrow.png" id="p0arrow" class="money-bar-arrow" alt=">" /></td>
@@ -232,7 +258,7 @@
 					</td>
 				</tr>
 				<tr id="moneybarrow8">
-					<td style="border: none;" class="moneybararrowcell">&nbsp;</td>
+					
 					<td style="border: none;">
 						<input type="button" id="viewstats" value="View stats" title="View a pop-up window that shows a list of each player's properties." />
 					</td>
@@ -241,7 +267,14 @@
 		</div>
 	</div>
 
-	<div id="setup">
+	<!-------------------------CARD SECTION STARTS HERE ----------------------------->
+
+	
+
+<div class="container" id="setup">
+	<div class="card text-white bg-danger" style="max-width: 40rem;">
+		<div class="card-body">
+
 		<div style="margin-bottom: 20px;">
 			Select number of players.
 			<select id="playernumber" title="Select the number of players for the game.">
@@ -257,7 +290,9 @@
 
 		<div id="player1input" class="player-input">
 			Player 1: <input type="text" id="player1name" title="Player name" maxlength="16" value="Player 1" />
-			<select id="player1color" title="Player color">
+
+			<select id="player1color" title="Player color" onchange="handleOnChangeEvent(this.style)">
+				<option >select a color </option>
 				<option style="color: aqua;">Aqua</option>
 				<option style="color: black;">Black</option>
 				<option style="color: blue;">Blue</option>
@@ -273,7 +308,7 @@
 				<option style="color: red;">Red</option>
 				<option style="color: silver;">Silver</option>
 				<option style="color: teal;">Teal</option>
-				<option selected="selected" style="color: yellow;">Yellow</option>
+				<option style="color: yellow;">Yellow</option>
 			</select>
 			<select id="player1ai" title="Choose whether this player is controled by a human or by the computer." onclick="document.getElementById('player1name').disabled = this.value !== '0';">
 				<option value="0" selected="selected">Human</option>
@@ -284,9 +319,11 @@
 		<div id="player2input" class="player-input">
 			Player 2: <input type="text" id="player2name" title="Player name" maxlength="16" value="Player 2" />
 			<select id="player2color" title="Player color">
+								<option >select a color </option>
+
 				<option style="color: aqua;">Aqua</option>
 				<option style="color: black;">Black</option>
-				<option selected="selected" style="color: blue;">Blue</option>
+				<option style="color: blue;">Blue</option>
 				<option style="color: fuchsia;">Fuchsia</option>
 				<option style="color: gray;">Gray</option>
 				<option style="color: green;">Green</option>
@@ -310,6 +347,8 @@
 		<div id="player3input" class="player-input">
 			Player 3: <input type="text" id="player3name" title="Player name" maxlength="16" value="Player 3" />
 			<select id="player3color" title="Player color">
+								<option >select a color </option>
+
 				<option style="color: aqua;">Aqua</option>
 				<option style="color: black;">Black</option>
 				<option style="color: blue;">Blue</option>
@@ -322,7 +361,7 @@
 				<option style="color: olive;">Olive</option>
 				<option style="color: orange;">Orange</option>
 				<option style="color: purple;">Purple</option>
-				<option selected="selected" style="color: red;">Red</option>
+				<option style="color: red;">Red</option>
 				<option style="color: silver;">Silver</option>
 				<option style="color: teal;">Teal</option>
 				<option style="color: yellow;">Yellow</option>
@@ -336,13 +375,15 @@
 		<div id="player4input" class="player-input">
 			Player 4: <input type="text" id="player4name" title="Player name" maxlength="16" value="Player 4" />
 			<select id="player4color" title="Player color">
+								<option >select a color </option>
+
 				<option style="color: aqua;">Aqua</option>
 				<option style="color: black;">Black</option>
 				<option style="color: blue;">Blue</option>
 				<option style="color: fuchsia;">Fuchsia</option>
 				<option style="color: gray;">Gray</option>
 				<option style="color: green;">Green</option>
-				<option selected="selected" style="color: lime;">Lime</option>
+				<option style="color: lime;">Lime</option>
 				<option style="color: maroon;">Maroon</option>
 				<option style="color: navy;">Navy</option>
 				<option style="color: olive;">Olive</option>
@@ -362,12 +403,14 @@
 		<div id="player5input" class="player-input">
 			Player 5: <input type="text" id="player5name" title="Player name" maxlength="16" value="Player 5" />
 			<select id="player5color" title="Player color">
+								<option >select a color </option>
+
 				<option style="color: aqua;">Aqua</option>
 				<option style="color: black;">Black</option>
 				<option style="color: blue;">Blue</option>
 				<option style="color: fuchsia;">Fuchsia</option>
 				<option style="color: gray;">Gray</option>
-				<option selected="selected" style="color: green;">Green</option>
+				<option style="color: green;">Green</option>
 				<option style="color: lime;">Lime</option>
 				<option style="color: maroon;">Maroon</option>
 				<option style="color: navy;">Navy</option>
@@ -388,7 +431,9 @@
 		<div id="player6input" class="player-input">
 			Player 6: <input type="text" id="player6name" title="Player name" maxlength="16" value="Player 6" />
 			<select id="player6color" title="Player color">
-				<option selected="selected" style="color: aqua;">Aqua</option>
+								<option >select a color </option>
+
+				<option style="color: aqua;">Aqua</option>
 				<option style="color: black;">Black</option>
 				<option style="color: blue;">Blue</option>
 				<option style="color: fuchsia;">Fuchsia</option>
@@ -414,6 +459,8 @@
 		<div id="player7input" class="player-input">
 			Player 7: <input type="text" id="player7name" title="Player name" maxlength="16" value="Player 7" />
 			<select id="player7color" title="Player color">
+								<option >select a color </option>
+
 				<option style="color: aqua;">Aqua</option>
 				<option style="color: black;">Black</option>
 				<option style="color: blue;">Blue</option>
@@ -424,7 +471,7 @@
 				<option style="color: maroon;">Maroon</option>
 				<option style="color: navy;">Navy</option>
 				<option style="color: olive;">Olive</option>
-				<option selected="selected" style="color: orange;">Orange</option>
+				<option style="color: orange;">Orange</option>
 				<option style="color: purple;">Purple</option>
 				<option style="color: red;">Red</option>
 				<option style="color: silver;">Silver</option>
@@ -440,6 +487,8 @@
 		<div id="player8input" class="player-input">
 			Player 8: <input type="text" id="player8name" title="Player name" maxlength="16" value="Player 8" />
 			<select id="player8color" title="Player color">
+								<option >select a color </option>
+
 				<option style="color: aqua;">Aqua</option>
 				<option style="color: black;">Black</option>
 				<option style="color: blue;">Blue</option>
@@ -451,7 +500,7 @@
 				<option style="color: navy;">Navy</option>
 				<option style="color: olive;">Olive</option>
 				<option style="color: orange;">Orange</option>
-				<option selected="selected" style="color: purple;">Purple</option>
+				<option style="color: purple;">Purple</option>
 				<option style="color: red;">Red</option>
 				<option style="color: silver;">Silver</option>
 				<option style="color: teal;">Teal</option>
@@ -469,6 +518,8 @@
 
 		<div id="noF5">Note: Refreshing this page or navigating away from it may end your game without warning.</div>
 	</div>
+</div>
+</div>
 
 	<div id="control">
 		<table>
@@ -562,6 +613,6 @@
 			</tr>
 		</table>
 	</div>
-
+		
 </body>
 </html>

@@ -1,4 +1,4 @@
-function Square(name, pricetext, color, price, groupNumber, baserent, rent1, rent2, rent3, rent4, rent5) {
+function Square(name, pricetext, color, price, groupNumber, baserent, rent1, rent2, rent3, rent4, rent5, url) {
 	this.name = name;
 	this.pricetext = pricetext;
 	this.color = color;
@@ -15,6 +15,7 @@ function Square(name, pricetext, color, price, groupNumber, baserent, rent1, ren
 	this.rent4 = (rent4 || 0);
 	this.rent5 = (rent5 || 0);
 	this.landcount = 0;
+	this.url=url;
 
 	if (groupNumber === 3 || groupNumber === 4) {
 		this.houseprice = 50;
@@ -38,12 +39,27 @@ function corrections() {
 	document.getElementById("cell1name").textContent = "Moon";
 
 	// Add images to enlarges.
-	document.getElementById("enlarge5token").innerHTML += '<img src="images/train_icon.png" height="60" width="65" alt="" style="position: relative; bottom: 20px;" />';
-	document.getElementById("enlarge15token").innerHTML += '<img src="images/train_icon.png" height="60" width="65" alt="" style="position: relative; top: -20px;" />';
-	document.getElementById("enlarge25token").innerHTML += '<img src="images/train_icon.png" height="60" width="65" alt="" style="position: relative; top: -20px;" />';
-	document.getElementById("enlarge35token").innerHTML += '<img src="images/train_icon.png" height="60" width="65" alt="" style="position: relative; top: -20px;" />';
-	document.getElementById("enlarge12token").innerHTML += '<img src="images/electric_icon.png" height="60" width="48" alt="" style="position: relative; top: -20px;" />';
-	document.getElementById("enlarge28token").innerHTML += '<img src="images/water_icon.png" height="60" width="78" alt="" style="position: relative; top: -20px;" />';
+	document.getElementById("enlarge5token").innerHTML += '<img src="images/swift.jpg" height="60" width="65" alt="" style="position: relative; bottom: 20px;" />';
+	document.getElementById("enlarge15token").innerHTML += '<img src="images/ts.png" height="60" width="65" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge25token").innerHTML += '<img src="images/c#.jpg" height="60" width="65" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge24token").innerHTML += '<img src="images/c++.png" height="60" width="65" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge23token").innerHTML += '<img src="images/c.png" height="60" width="65" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge12token").innerHTML += '<img src="images/microsoft.png" height="80" width="80" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge28token").innerHTML += '<img src="images/" height="40" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge31token").innerHTML += '<img src="images/go.jpg" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge33token").innerHTML += '<img src="images/java.png" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge34token").innerHTML += '<img src="images/js.png" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge35token").innerHTML += '<img src="images/kotlin.jpg" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge38token").innerHTML += '<img src="images/pascal.jpg" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge3token").innerHTML += '<img src="images/perl.png" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge6token").innerHTML += '<img src="images/php.png" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge8token").innerHTML += '<img src="images/python.png" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge9token").innerHTML += '<img src="images/ruby.jpg" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge14token").innerHTML += '<img src="images/flutter.png" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+	document.getElementById("enlarge13token").innerHTML += '<img src="images/android.png" height="60" width="78" alt="" style="position: relative; top: -50px;" />';
+
+
+
 }
 
 function utiltext() {
@@ -70,46 +86,58 @@ function citytax() {
 
 var square = [];
 
-square[0] = new Square("GO", "COLLECT $200 SALARY AS YOU PASS.", "#FFFFFF");
+square[0] = new Square("GO programming", "COLLECT $200 SALARY AS YOU PASS.", "#FFFFFF", '','','','','','','','',"images-url");
 square[1] = new Square("Moon","The Moon (or Luna) is the Earth’s only natural satellite and was formed 4.6 billion years ago around some 30–50 million years after the formation of the solar system","https://mani14011998.github.io/moon/","$60", "#8B4513", 60, 3, 2, 10, 30, 90, 160, 250);
-square[2] = new Square("Quiz on Moon", "FOLLOW INSTRUCTIONS IF YOU GIVES 2 OUT OF 3 QUESTIONS RIGHT YOU WILL GET REWARD", "#FFFFFF");
-square[3] = new Square("Mars", "$60", "#8B4513", 60, 3, 4, 20, 60, 180, 320, 450);
-square[4] = new Square("Fuel Tax","The energy needed to get to the moon was 2.90652E11 joules.  That's about the same as that produced by Hoover Dam in 2.5 minutes.", "Pay $200", "#FFFFFF");
-square[5] = new Square("Nasa", "$200", "#FFFFFF", 200, 1);
-square[6] = new Square("Earth", "$100", "#87CEEB", 100, 4, 6, 30, 90, 270, 400, 550);
-square[7] = new Square("Quiz on Mars", "FOLLOW INSTRUCTIONS IF YOU GIVES 2 OUT OF 3 QUESTIONS RIGHT YOU WILL GET REWARD", "#FFFFFF");
-square[8] = new Square("space", "$100", "#87CEEB", 100, 4, 6, 30, 90, 270, 400, 550);
-square[9] = new Square("Ocean", "$120", "#87CEEB", 120, 4, 8, 40, 100, 300, 450, 600);
+square[2] = new Square("Quiz of Syntaxing", "FOLLOW INSTRUCTIONS IF YOU GIVES 2 OUT OF 3 QUESTIONS RIGHT YOU WILL GET REWARD", "#FFFFFF");
+square[3] = new Square("PERL ", "$60", "#8B4513", 60, 3, 4, 20, 60, 180, 320, 450);
+square[4] = new Square("code Tax","The energy needed to get to the moon was 2.90652E11 joules.  That's about the same as that produced by Hoover Dam in 2.5 minutes.", "Pay $200", "#FFFFFF");
+square[5] = new Square("swift", "$200", "#FFFFFF", 200, 1);
+square[6] = new Square("PHP ", "$100", "#87CEEB", 100, 4, 6, 30, 90, 270, 400, 550);
+square[7] = new Square("Quiz Of Logics", "FOLLOW INSTRUCTIONS IF YOU GIVES 2 OUT OF 3 QUESTIONS RIGHT YOU WILL GET REWARD", "#FFFFFF");
+square[8] = new Square("PYTHON ", "$100", "#87CEEB", 100, 4, 6, 30, 90, 270, 400, 550);
+square[9] = new Square("RUBY ", "$120", "#87CEEB", 120, 4, 8, 40, 100, 300, 450, 600);
 square[10] = new Square("Portal Moon", "", "#FFFFFF");
 square[11] = new Square("Mountain", "$140", "#FF0080", 140, 5, 10, 50, 150, 450, 625, 750);
-square[12] = new Square("ISRO", "$150", "#FFFFFF", 150, 2);
-square[13] = new Square("Meteors", "$140", "#FF0080", 140, 5, 10, 50, 150, 450, 625, 750);
-square[14] = new Square("Comets", "$160", "#FF0080", 160, 5, 12, 60, 180, 500, 700, 900);
-square[15] = new Square("Astroids", "$200", "#FFFFFF", 200, 1);
-square[16] = new Square("Star", "$180", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
-square[17] = new Square("Quiz on Moon", "FOLLOW INSTRUCTIONS IF YOU GIVES 2 OUT OF 3 QUESTIONS RIGHT YOU WILL GET REWARD", "#FFFFFF");
-square[18] = new Square("Sun", "$180", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
-square[19] = new Square("Star", "$200", "#FFA500", 200, 6, 16, 80, 220, 600, 800, 1000);
-square[20] = new Square("Mars Door", "", "#FFFFFF");
-square[21] = new Square("Europa", "$220", "#FF0000", 220, 7, 18, 90, 250, 700, 875, 1050);
-square[22] = new Square("Quiz on Earth", "FOLLOW INSTRUCTIONS IF YOU GIVES 2 OUT OF 3 QUESTIONS RIGHT YOU WILL GET REWARD", "#FFFFFF");
-square[23] = new Square("lo", "$220", "#FF0000", 220, 7, 18, 90, 250, 700, 875, 1050);
-square[24] = new Square("Ganymede", "$240", "#FF0000", 240, 7, 20, 100, 300, 750, 925, 1100);
-square[25] = new Square("Aura", "$200", "#FFFFFF", 200, 1);
-square[26] = new Square("Callisto", "$260", "#FFFF00", 260, 8, 22, 110, 330, 800, 975, 1150);
-square[27] = new Square("Dia", "$260", "#FFFF00", 260, 8, 22, 110, 330, 800, 975, 1150);
-square[28] = new Square("Space studies Institute", "$150", "#FFFFFF", 150, 2);
+square[12] = new Square("Microsoft", "$150", "#FFFFFF", 150, 2);
+square[13] = new Square("Android", "$140", "#FF0080", 140, 5, 10, 50, 150, 450, 625, 750);
+square[14] = new Square("flutter", "$160", "", 160, 5, 12, 60, 180, 500, 700, 900);
+square[15] = new Square("TYPESCRIPT ", "", "#FFFFFF", 200, 1);
+square[16] = new Square("VISUAL BASIC", "$180", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
+square[17] = new Square("Quiz on UI", "FOLLOW INSTRUCTIONS IF YOU GIVES 2 OUT OF 3 QUESTIONS RIGHT YOU WILL GET REWARD", "#FFFFFF");
+square[18] = new Square("Unity", "$180", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
+square[19] = new Square("R", "$200", "#FFA500", 200, 6, 16, 80, 220, 600, 800, 1000);
+square[20] = new Square("Others chanllange", "", "#FFFFFF");
+square[21] = new Square("ARDUINO", "$220", "#FF0000", 220, 7, 18, 90, 250, 700, 875, 1050);
+square[22] = new Square("Syntax Error Finding", "FOLLOW INSTRUCTIONS IF YOU GIVES 2 OUT OF 3 QUESTIONS RIGHT YOU WILL GET REWARD", "#FFFFFF");
+square[23] = new Square("C ", "", "#FF0000", 220, 7, 18, 90, 250, 700, 875, 1050);
+square[24] = new Square("C++", "", "#FF0000", 240, 7, 20, 100, 300, 750, 925, 1100);
+square[25] = new Square("C#", "", "#FF0000", 200, 1);
+square[26] = new Square("DART", "$260", "#FFFF00", 260, 8, 22, 110, 330, 800, 975, 1150);
+square[27] = new Square("EMCA SCRIPT", "$260", "#FFFF00", 260, 8, 22, 110, 330, 800, 975, 1150);
+square[28] = new Square("code studies Institute", "$150", "#FFFFFF", 150, 2);
 square[29] = new Square("Chaldene", "$280", "#FFFF00", 280, 8, 24, 120, 360, 850, 1025, 1200);
-square[30] = new Square("Go to earth Portal", " Do not collect $200.", "#FFFFFF");
-square[31] = new Square("Pacific Avenue", "$300", "#008000", 300, 9, 26, 130, 390, 900, 110, 1275);
+square[30] = new Square("Self chanllange ", " Do not collect $200.", "#FFFFFF");
+square[31] = new Square("GO", "", "#008000", 300, 9, 26, 130, 390, 900, 110, 1275);
 square[32] = new Square("North Carolina Avenue", "$300", "#008000", 300, 9, 26, 130, 390, 900, 110, 1275);
-square[33] = new Square("Quiz on Universe", "#FFFFFF");
-square[34] = new Square("Pennsylvania Avenue", "$320", "#008000", 320, 9, 28, 150, 450, 1000, 1200, 1400);
-square[35] = new Square("ESA", "$200", "#FFFFFF", 200, 1);
+square[33] = new Square("JAVA ", "");
+square[34] = new Square("JAVASCRIPT", "$320", "#008000", 320, 9, 28, 150, 450, 1000, 1200, 1400);
+square[35] = new Square("KOTLIN ", "", "#FFFFFF", 200, 1);
 square[36] = new Square("quiz on astronuts", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
-square[37] = new Square("Park Place", "$350", "#0000FF", 350, 10, 35, 175, 500, 1100, 1300, 1500);
-square[38] = new Square("oxygen tank price ", "Pay $100", "#FFFFFF");
+square[37] = new Square("MATLAB", "$350", "#0000FF", 350, 10, 35, 175, 500, 1100, 1300, 1500);
+square[38] = new Square("PASCAL", "Pay $100", "#FFFFFF");
 square[39] = new Square("Boardwalk", "$400", "#0000FF", 400, 10, 50, 200, 600, 1400, 1700, 2000);
+
+console.log(document.getElementById("cell20"))
+
+for(let key=0; key<square.length; key++){
+	let ele = document.getElementById("cell21");
+	console.log(ele)
+	// ele.style.backgroundImage=square[key].url;
+}
+
+// square.forEach((sq, index)=>{
+// 	document.getElementById(${`cell${index`}).style.backgroundImage = sq.url;
+// });
 
 var communityChestCards = [];
 var chanceCards = [];

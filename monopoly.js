@@ -1707,6 +1707,7 @@ function updateOption() {
 function chanceCommunityChest() {
 	var p = player[turn];
 
+
 	// Community Chest
 	if (p.position === 2 || p.position === 17 || p.position === 33) {
 		var communityChestIndex = communityChestCards.deck[communityChestCards.index];
@@ -2614,6 +2615,10 @@ function setup() {
 
 	var playerArray = new Array(pcount);
 	var p;
+
+	square.map((sq, index)=>{
+		document.getElementById("cell"+index).style.backgroundImage = sq.url;
+	})
 
 	playerArray.randomize();
 
